@@ -2,7 +2,7 @@ import "./App.css";
 import CardList from "./components/CardList";
 import { robots } from "./robots";
 import SearchBox from "./components/SearchBox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [robotState, setRobotState] = useState({
@@ -19,6 +19,12 @@ const App = () => {
       .toLowerCase()
       .includes(robotState.searchField.toLowerCase());
   });
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((post) => console.log(post));
+  }, []);
 
   return (
     <div className="main-container">
