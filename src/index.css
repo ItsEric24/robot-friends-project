@@ -1,0 +1,4 @@
+body {
+  background: linear-gradient(to right, #4dc9e6, #210cae);
+  scroll-behavior: smooth;
+}
